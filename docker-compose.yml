@@ -20,6 +20,8 @@ services:
             - "8000:80"
         networks:
             - laravel
+        depends_on:
+            - app
 
     db:
         image: mysql:8.0.39
