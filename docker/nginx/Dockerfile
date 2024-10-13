@@ -3,7 +3,7 @@ ARG PHP_VERSION=8.3
 FROM php:${PHP_VERSION}-fpm-alpine
 
 ## Make php ini
-RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+#RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 ## Install composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \

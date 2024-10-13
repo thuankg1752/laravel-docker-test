@@ -16,7 +16,7 @@ services:
             - ./:/var/www
             - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
         ports:
-            - "8000:80"
+            - "8081:80"
         networks:
             - laravel
         depends_on:
@@ -44,8 +44,10 @@ services:
         environment:
             PMA_HOST: db
             PMA_PORT: 3306
+            PMA_USER: ${DB_USERNAME}
+            PMA_PASSWORD: ${DB_PASSWORD}
         ports:
-            - "8081:80"
+            - "8080:80"
         networks:
             - laravel
 networks:
